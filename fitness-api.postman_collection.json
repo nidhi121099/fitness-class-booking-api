@@ -1,0 +1,70 @@
+{
+    "info": {
+      "name": "Fitness Booking API",
+      "_postman_id": "c6ee3d20-77db-47bc-9f7c-6de3e7be68c4",
+      "description": "Postman collection for testing Fitness Class Booking API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Get Upcoming Classes",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://127.0.0.1:8000/classes",
+            "protocol": "http",
+            "host": ["127", "0", "0", "1"],
+            "port": "8000",
+            "path": ["classes"]
+          }
+        }
+      },
+      {
+        "name": "Book a Class",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "name": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"class_id\": \"1\",\n  \"client_name\": \"Nidhi Patel\",\n  \"client_email\": \"nidhi@gmail.com\"\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/book",
+            "protocol": "http",
+            "host": ["127", "0", "0", "1"],
+            "port": "8000",
+            "path": ["book"]
+          }
+        }
+      },
+      {
+        "name": "Get Bookings by Email",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://127.0.0.1:8000/bookings?email=nidhi@gmail.com",
+            "protocol": "http",
+            "host": ["127", "0", "0", "1"],
+            "port": "8000",
+            "path": ["bookings"],
+            "query": [
+              {
+                "key": "email",
+                "value": "nidhi@gmail.com"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+  
